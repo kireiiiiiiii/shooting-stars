@@ -38,15 +38,15 @@ import kireiiiiiiii.shooting_stars.common.Links;
 public class Interact {
 
     public static final Runnable HOME = () -> {
-        App.game.onGoToMenu();
+        App.app.onGoToMenu();
     };
 
     public static final Runnable OPTIONS = () -> {
-        App.game.onGoToOptions();
+        App.app.onGoToOptions();
     };
 
     public static final Runnable LINKS = () -> {
-        App.game.onGoToLinks();
+        App.app.onGoToLinks();
     };
 
     public static final Runnable GITHUB = () -> {
@@ -58,15 +58,15 @@ public class Interact {
     };
 
     public static final Runnable NEXT_LAN = () -> {
-        App.game.onLanguageChange(true);
+        App.app.onLanguageChange(true);
     };
 
     public static final Runnable PREV_LAN = () -> {
-        App.game.onLanguageChange(false);
+        App.app.onLanguageChange(false);
     };
 
     public static final Runnable PAUSE = () -> {
-        App.game.onTogglePause();
+        App.app.onTogglePause();
     };
 
     public static final Runnable DEBUG = () -> {
@@ -74,14 +74,14 @@ public class Interact {
     };
 
     public static final Runnable RESTART = () -> {
-        App.game.onGameRestart();
+        App.app.onGameRestart();
     };
 
     public static final Runnable START = () -> {
-        App.game.onGameStart();
+        App.app.onGameStart();
     };
 
     public static final Runnable TARGET_INTERACTED = () -> {
-        App.game.onTargetHit(false);
+        App.app.onTargetHit(false);
     };
 }

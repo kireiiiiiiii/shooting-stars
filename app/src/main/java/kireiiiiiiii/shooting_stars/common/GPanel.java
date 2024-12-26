@@ -224,52 +224,52 @@ public class GPanel extends JPanel implements MouseListener, MouseMotionListener
 
     @Override
     public void mouseDragged(MouseEvent e) {
-        App.game.mouseDragged(e);
+        App.app.mouseDragged(e);
     }
 
     @Override
     public void mouseMoved(MouseEvent e) {
-        App.game.mouseMoved(e);
+        App.app.mouseMoved(e);
     }
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        App.game.mouseClicked(e);
+        App.app.mouseClicked(e);
     }
 
     @Override
     public void mousePressed(MouseEvent e) {
-        App.game.mousePressed(e);
+        App.app.mousePressed(e);
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
-        App.game.mouseReleased(e);
+        App.app.mouseReleased(e);
     }
 
     @Override
     public void mouseEntered(MouseEvent e) {
-        App.game.mouseEntered(e);
+        App.app.mouseEntered(e);
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-        App.game.mouseExited(e);
+        App.app.mouseExited(e);
     }
 
     @Override
     public void keyTyped(KeyEvent e) {
-        App.game.keyTyped(e);
+        App.app.keyTyped(e);
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
-        App.game.keyPressed(e);
+        App.app.keyPressed(e);
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-        App.game.keyReleased(e);
+        App.app.keyReleased(e);
     }
 
     /////////////////
