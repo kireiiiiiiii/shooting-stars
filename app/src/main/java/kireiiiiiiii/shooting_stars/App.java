@@ -34,7 +34,7 @@ import javax.swing.SwingUtilities;
  * Main method class.
  * 
  */
-public class AppMain {
+public class App {
 
     /////////////////
     // Constatns

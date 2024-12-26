@@ -44,7 +44,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
-import kireiiiiiiii.shooting_stars.AppMain;
+import kireiiiiiiii.shooting_stars.App;
 import kireiiiiiiii.shooting_stars.interfaces.Interactable;
 import kireiiiiiiii.shooting_stars.interfaces.Renderable;
 
@@ -224,52 +224,52 @@ public class GPanel extends JPanel implements MouseListener, MouseMotionListener
 
     @Override
     public void mouseDragged(MouseEvent e) {
-        AppMain.game.mouseDragged(e);
+        App.game.mouseDragged(e);
     }
 
     @Override
     public void mouseMoved(MouseEvent e) {
-        AppMain.game.mouseMoved(e);
+        App.game.mouseMoved(e);
     }
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        AppMain.game.mouseClicked(e);
+        App.game.mouseClicked(e);
     }
 
     @Override
     public void mousePressed(MouseEvent e) {
-        AppMain.game.mousePressed(e);
+        App.game.mousePressed(e);
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
-        AppMain.game.mouseReleased(e);
+        App.game.mouseReleased(e);
     }
 
     @Override
     public void mouseEntered(MouseEvent e) {
-        AppMain.game.mouseEntered(e);
+        App.game.mouseEntered(e);
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-        AppMain.game.mouseExited(e);
+        App.game.mouseExited(e);
     }
 
     @Override
     public void keyTyped(KeyEvent e) {
-        AppMain.game.keyTyped(e);
+        App.game.keyTyped(e);
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
-        AppMain.game.keyPressed(e);
+        App.game.keyPressed(e);
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-        AppMain.game.keyReleased(e);
+        App.game.keyReleased(e);
     }
 
     /////////////////

@@ -29,7 +29,7 @@ package kireiiiiiiii.shooting_stars.constants;
 import java.io.File;
 import java.io.IOException;
 
-import kireiiiiiiii.shooting_stars.AppMain;
+import kireiiiiiiii.shooting_stars.App;
 
 /**
  * Contstants for file paths.
@@ -51,7 +51,7 @@ public class Files {
     // Directory constants
     ////////////////
 
-    public static final String DATA_DIR = getAppDataDirectory(AppMain.APP_NAME).getAbsolutePath();
+    public static final String DATA_DIR = getAppDataDirectory(App.APP_NAME).getAbsolutePath();
     public static final String USER_DATA_DIR = DATA_DIR + File.separator + USER_DATA_DIR_NAME;
     public static final String LOG_DIR = DATA_DIR + File.separator + LOG_DIRECTORY_NAME;
     public static final String RESOURCE_DIR = getResourcesDir();

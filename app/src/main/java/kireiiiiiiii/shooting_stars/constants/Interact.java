@@ -26,7 +26,7 @@
 
 package kireiiiiiiii.shooting_stars.constants;
 
-import kireiiiiiiii.shooting_stars.AppMain;
+import kireiiiiiiii.shooting_stars.App;
 import kireiiiiiiii.shooting_stars.common.Links;
 
 /**
@@ -38,15 +38,15 @@ import kireiiiiiiii.shooting_stars.common.Links;
 public class Interact {
 
     public static final Runnable HOME = () -> {
-        AppMain.game.onGoToMenu();
+        App.game.onGoToMenu();
     };
 
     public static final Runnable OPTIONS = () -> {
-        AppMain.game.onGoToOptions();
+        App.game.onGoToOptions();
     };
 
     public static final Runnable LINKS = () -> {
-        AppMain.game.onGoToLinks();
+        App.game.onGoToLinks();
     };
 
     public static final Runnable GITHUB = () -> {
@@ -58,15 +58,15 @@ public class Interact {
     };
 
     public static final Runnable NEXT_LAN = () -> {
-        AppMain.game.onLanguageChange(true);
+        App.game.onLanguageChange(true);
     };
 
     public static final Runnable PREV_LAN = () -> {
-        AppMain.game.onLanguageChange(false);
+        App.game.onLanguageChange(false);
     };
 
     public static final Runnable PAUSE = () -> {
-        AppMain.game.onTogglePause();
+        App.game.onTogglePause();
     };
 
     public static final Runnable DEBUG = () -> {
@@ -74,14 +74,14 @@ public class Interact {
     };
 
     public static final Runnable RESTART = () -> {
-        AppMain.game.onGameRestart();
+        App.game.onGameRestart();
     };
 
     public static final Runnable START = () -> {
-        AppMain.game.onGameStart();
+        App.game.onGameStart();
     };
 
     public static final Runnable TARGET_INTERACTED = () -> {
-        AppMain.game.onTargetHit(false);
+        App.game.onTargetHit(false);
     };
 }
