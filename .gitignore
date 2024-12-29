@@ -1,8 +1,8 @@
 # Log files
 *.log
 
-# Visual Studio Code
-.vscode/
+# Visual Studio Code settings
+.vscode/settings.json
 
 # macOS
 .DS_Store

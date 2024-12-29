@@ -513,34 +513,17 @@ public class App {
         // ------------------------------------------------------------------------------------------------
 
         this.gpanel.add(Arrays.asList(
-
                 // MAIN MENU
-                (Renderable) new Backround(appSize),
-                (Renderable) new MenuScreen(appSize),
-                (Renderable) new MenuButton(menu_linkBtn, Textures.LINK_ICON, Interact.LINKS), // LINKS
+                (Renderable) new Backround(appSize), (Renderable) new MenuScreen(appSize), (Renderable) new MenuButton(menu_linkBtn, Textures.LINK_ICON, Interact.LINKS), // LINKS
                 (Renderable) new MenuButton(menu_optionsBtn, Textures.SETTINGS_ICON, Interact.OPTIONS), // OPTIONS
-
                 // OPTIONS & LINKS PANEL
-                (Renderable) new PopUpPanelWindget(appSize),
-                (Renderable) new LanguageTitle(options_currlan),
-                (Renderable) new ChangeButton(options_prevlanBtn, true),
-                (Renderable) new ChangeButton(options_nextlanBtn, false),
-                (Renderable) new InstagramLink(options_instagramBtn),
-                (Renderable) new GithubLink(options_gitBtn),
-
+                (Renderable) new PopUpPanelWindget(appSize), (Renderable) new LanguageTitle(options_currlan), (Renderable) new ChangeButton(options_prevlanBtn, true), (Renderable) new ChangeButton(options_nextlanBtn, false), (Renderable) new InstagramLink(options_instagramBtn), (Renderable) new GithubLink(options_gitBtn),
                 // GAME MAIN
-                (Renderable) new TimerWidget(game_time),
-                (Renderable) new ScoreWidget(game_score),
-                (Renderable) new TopscoreWidget(game_topscore),
-                (Renderable) new StarWidget(),
-
+                (Renderable) new TimerWidget(game_time), (Renderable) new ScoreWidget(game_score), (Renderable) new TopscoreWidget(game_topscore), (Renderable) new StarWidget(),
                 // PAUSE SCREEN
-                (Renderable) new HomeButton(pause_menuBtn),
-                (Renderable) new PauseScreen(appSize),
-
+                (Renderable) new HomeButton(pause_menuBtn), (Renderable) new PauseScreen(appSize),
                 // GAME OVER SCREEN
-                (Renderable) new ScoreBoard(gameov_scoreboard),
-                (Renderable) new GameOverScreen(appSize)));
+                (Renderable) new ScoreBoard(gameov_scoreboard), (Renderable) new GameOverScreen(appSize)));
     }
 
     /////////////////

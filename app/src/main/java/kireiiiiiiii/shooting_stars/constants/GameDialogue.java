@@ -161,8 +161,7 @@ public class GameDialogue {
         currLanguageIndex = languageIndex;
 
         // ---- Change dialogue variables ----
-        ArrayList<String> values = SpreadsheetUtil.getColumnValues(SPREADSHEET_FILENAME, SPREADSHEET_NAME,
-                currLanguageIndex);
+        ArrayList<String> values = SpreadsheetUtil.getColumnValues(SPREADSHEET_FILENAME, SPREADSHEET_NAME, currLanguageIndex);
         String[] result = new String[values.size()];
         for (int i = 0; i < values.size(); i++) {
             result[i] = SpreadsheetUtil.getCellValue(SPREADSHEET_FILENAME, SPREADSHEET_NAME, i, languageIndex + 1);
