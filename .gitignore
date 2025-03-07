@@ -1,32 +1,9 @@
-# Log files
-*.log
-
-# Visual Studio Code settings
-.vscode/settings.json
-
 # macOS
 .DS_Store
 
 # Ignore Excel temporary files
 ~$*.xls*
 
-##########
-# GRADLE #
-##########
-
-.gradle
-**/build/
-!src/**/build/
-# Ignore Gradle GUI config
-gradle-app.setting
-# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
-!gradle-wrapper.jar
-# Avoid ignore Gradle wrappper properties
-!gradle-wrapper.properties
-# Cache of project
-.gradletasknamecache
-# Eclipse Gradle plugin generated files
-# Eclipse Core
-.project
-# JDT-specific (Eclipse Java Development Tools)
-.classpath
+# Gradle files
+.gradle/
+app/build/
