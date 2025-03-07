@@ -16,6 +16,14 @@ JAR_TASK="shadowjar"
 
 # Process -------------------------------------------------------------------
 
+JAVA_VERSION=$(java -version 2>&1 | awk -F '"' '/version/ {print $2}' | awk -F. '{print $1}')
+if [ "$JAVA_VERSION" -ge 21 ]; then
+    echo "Java version is $JAVA_VERSION, which meets the requirement of 21 or higher."
+else
+    echo "Java version is lower than 21. Please update Java."
+    exit 1
+fi
+
 echo "Building JAR with Gradle..."
 ./gradlew $JAR_TASK
 
