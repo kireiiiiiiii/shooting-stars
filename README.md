@@ -1,4 +1,4 @@
-![banner](https://github.com/kireiiiiiiii/shooting-stars/blob/main/assets/.github/banner.png?raw=true)
+![banner](https://github.com/kireiiiiiiii/shooting-stars/blob/master/assets/.github/banner.png?raw=true)
 
 # ⭐ Shooting Stars ⭐
 
