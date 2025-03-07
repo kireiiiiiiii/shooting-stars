@@ -1,5 +1,5 @@
 val mainClassName = "kireiiiiiiii.shooting_stars.App"
-val projectName = "ShootingStars"
+val projectName = "shooting-stars"
 
 plugins {
     id("application")
@@ -42,12 +42,11 @@ tasks.named<Test>("test") {
 
 tasks.withType<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar> {
     enabled = true
-    archiveBaseName.set("Flaggi-server")
-    archiveVersion.set("1.0.0")
+    archiveBaseName.set(projectName)
+    archiveVersion.set("")
     archiveClassifier.set("")
-    destinationDirectory.set(file("$rootDir/shadowjar"))
     doLast {
-        println("Server Shadow JAR has been created at: ${archiveFile.get().asFile.absolutePath}")
+        println("Shadow JAR has been created at: ${archiveFile.get().asFile.absolutePath}")
     }
 }
 
