@@ -25,7 +25,7 @@ dependencies {
 
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(21)) // Use Java 21
+        languageVersion.set(JavaLanguageVersion.of(21))
     }
     sourceCompatibility = JavaVersion.VERSION_21
     targetCompatibility = JavaVersion.VERSION_21
@@ -40,14 +40,23 @@ tasks.named<Test>("test") {
     useJUnitPlatform()
 }
 
-tasks.processResources {
-    from("../LICENSES") {
-        into("licenses")
+tasks.withType<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar> {
+    enabled = true
+    archiveBaseName.set("Flaggi-server")
+    archiveVersion.set("1.0.0")
+    archiveClassifier.set("")
+    destinationDirectory.set(file("$rootDir/shadowjar"))
+    doLast {
+        println("Server Shadow JAR has been created at: ${archiveFile.get().asFile.absolutePath}")
     }
 }
 
-tasks.shadowJar {
-    mergeServiceFiles()
-    archiveClassifier.set("")
-    archiveFileName.set("$projectName.jar")
+tasks.named<JavaExec>("run") {
+    dependsOn(tasks.named<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar>("shadowJar"))
+    classpath = sourceSets["main"].runtimeClasspath + files(tasks.named<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar>("shadowJar").get().archiveFile)
+    mainClass.set(application.mainClass)
+}
+
+tasks.build {
+    dependsOn(tasks.shadowJar)
 }
