@@ -1,34 +1,89 @@
-![project banner](./public/banner.png)
+![banner](https://github.com/kireiiiiiiii/shooting-stars/blob/main/assets/.github/banner.png?raw=true)
 
-# ⭐️ Shooting Stars ⭐️
+# ⭐ Shooting Stars ⭐
 
-### Specifications
+A fast-paced arcade game where you shoot stars from the sky before time runs out! 🌠
 
-This game was build using Java 21 and Gradle 8.10. This project uses Gradle features to be removed in Gradle 9, so Gradle cannot be upgraded.
+## ⚙️ Specifications
 
-## Goal of the game
+This game is built using **Java 21** and **Gradle 8.10**. It relies on Gradle features that will be removed in Gradle 9, so upgrading is not possible.
 
-The goal of the game is to shoot as many stars from the sky as posible, in a given time limit. Each successfuly shot star will earn you 10 points. Try to achieve the highest score possible, before the time runs out. For every miss (click outside the circle) 10 points will be subtracted from your score. However the your score can't go negative.☺️
+## 📥 Installation
 
-## How to set up
+1. Download the universal `.jar` file from the [latest release](https://github.com/kireiiiiiiii/shooting-stars/releases/latest).
+2. Ensure you have **Java 21** or higher installed on your system.
+3. Run the `.jar` file by either:
 
-Download the universal `jar` file from the [latest release](https://github.com/kireiiiiiiii/shooting-stars/releases/latest). Ensure you have Java 21 or higher installed on your system, and run the `jar` file you downloaded.
+   - **Double-clicking** it, or
+   - Running the following command in your terminal:
 
-### Controls
+   ```shell
+   java -jar name-of-the-jar.jar
+   ```
 
--   **S Key**:               Starts the game in the main menu,
--   **Left Mouse Click**:    Shoots down the star target.
--   **R Key**:               Restarts the game.
--   **ESC Key:**:            Pauses the game.
+## 🎯 Goal of the Game
 
-## Future goals/tasks
+Shoot as many stars as possible before time runs out! ⏳✨
 
--   Better target position generation (no overlaying with the score board, or on the edge of the frame)
--   Random target rotation
--   Better target hitbox (include the tips of the star, not just the center)
--   Sound effects and music
--   Add an exit button to the main screen
+- Each successfully shot star **earns you +10 points**.
+- Clicking outside the target **subtracts 10 points**, but your score can’t go negative.
+- Aim for the **highest score** before the timer hits zero!
 
-## Contact Information:
+## 🎮 Controls
 
--   If you have any questions, feedback, or issues with the game, please contact me on my instagram [@\_kireiiiiiiii](https://www.instagram.com/_kireiiiiiiii)
+- **S Key** ➝ Start the game (Main Menu)
+- **Left Mouse Click** ➝ Shoot the star target
+- **R Key** ➝ Restart the game
+- **ESC Key** ➝ Pause the game
+
+## 🛠️ Running from Source
+
+To run the game from the source code:
+
+1. Clone this repository:
+
+   ```shell
+   git clone https://github.com/kireiiiiiiii/shooting-stars.git
+   cd shooting-stars
+   ```
+
+2. Run the Gradle `run` task, which will use [ShadowJar](https://github.com/GradleUp/shadow) to package and execute the game:
+
+   ```shell
+   gradle run
+   ```
+
+## 📦 Packaging
+
+This project includes shell scripts to package the game into a **`.dmg` (macOS)** or **`.exe` (Windows)** using [jpackage](https://docs.oracle.com/en/java/javase/17/docs/specs/man/jpackage.html). These scripts include a custom JRE and automatically detect the OS.
+
+### 🔧 How to package the game:
+
+1. Clone this repository:
+
+   ```shell
+   git clone https://github.com/kireiiiiiiii/shooting-stars.git
+   cd shooting-stars
+   ```
+
+2. Run the packaging script:
+
+   ```shell
+   sh package.sh
+   ```
+
+- On **macOS**, this will generate a `.dmg` file.
+- On **Windows**, this will generate an `.exe` file.
+- **Other platforms are not supported** due to OS-specific dependencies.
+
+## 🚀 Future Goals / Tasks
+
+✅ Improve target placement (no overlapping with the scoreboard or edges).
+✅ Add **random target rotation** for variety.
+✅ Enhance hitbox detection (include star tips, not just the center).
+✅ Add **sound effects and music** for a better experience.
+✅ Include an **exit button** in the main menu.
+
+## 📩 Contact
+
+💬 Have feedback, issues, or suggestions? Open an **issue** or contact me on Instagram: [@\_kireiiiiiiii](https://www.instagram.com/_kireiiiiiiii)
