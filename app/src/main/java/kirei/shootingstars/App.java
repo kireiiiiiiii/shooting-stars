@@ -80,6 +80,7 @@ public class App {
         // ---- Setup the GPanel ----
         double[] windowSize = ScreenUtil.getAppWindowSize();
         this.gpanel = new GPanel(FPS, (int) windowSize[0], (int) windowSize[1], false, GameDialogue.appName);
+        this.gpanel.setIcon(Textures.ICON);
         gpanel.getAppFrame().setBackground(Colors.BACKROUND);
         onUISetup();
 
