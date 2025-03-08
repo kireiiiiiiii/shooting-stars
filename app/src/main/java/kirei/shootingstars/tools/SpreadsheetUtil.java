@@ -6,7 +6,6 @@
 
 package kirei.shootingstars.tools;
 
-import java.io.File;
 import java.io.InputStream;
 import java.util.ArrayList;
 
@@ -20,8 +19,8 @@ public class SpreadsheetUtil {
 
     public static String getCellValue(String fileName, String sheetName, int rowNumber, int cellNumber) {
         String cellValue = null;
-        String path = File.separator + "spreadsheets" + File.separator + fileName + ".xlsx";
-        try (InputStream inputStream = SpreadsheetUtil.class.getResourceAsStream(path); Workbook workbook = new XSSFWorkbook(inputStream)) {
+        String resourcePath = "/spreadsheets/" + fileName + ".xlsx";
+        try (InputStream inputStream = SpreadsheetUtil.class.getResourceAsStream(resourcePath); Workbook workbook = new XSSFWorkbook(inputStream)) {
 
             Sheet sheet = workbook.getSheet(sheetName);
             if (sheet == null) {
