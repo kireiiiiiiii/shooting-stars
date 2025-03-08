@@ -383,7 +383,7 @@ public class App {
         int[] options_instagramBtn = { width / 2 - 300, height / 2 - 50 };
         int[] options_gitBtn = { width / 2 + 130, height / 2 - 50 };
         int[] options_currlan = { width / 2 - LanguageTitle.size[0] / 2, height / 2 - LanguageTitle.size[1] / 2 };
-        int[] options_currlan2 = { width / 2 - LanguageTitle.size[0] / 2, height / 2 - LanguageTitle.size[1] / 2 + 300 };
+        int[] options_currlan2 = { width / 2 - LanguageTitle.size[0] / 2, height - 220 };
         int[] options_prevlanBtn = { options_currlan[0] - ChangeButton.SIZE[0] - 20, options_currlan[1] };
         int[] options_nextlanBtn = { options_currlan[0] + LanguageTitle.size[0] + 20, options_currlan[1] };
         // GAME
