@@ -27,6 +27,9 @@ public class GameDialogue {
     public static String appName;
     // ---- Main menu ----
     public static String menuSubText;
+    public static String deleteDataButton;
+    public static String instagram;
+    public static String github;
     // ---- Game Widgets ----
     public static String score;
     public static String topscore;
@@ -130,6 +133,9 @@ public class GameDialogue {
         gameOver = result[9];
         gameOverSubtext = result[10];
         pause = result[11];
+        deleteDataButton = result[12];
+        instagram = result[13];
+        github = result[14];
     }
 
 }

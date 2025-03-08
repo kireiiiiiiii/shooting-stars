@@ -35,6 +35,7 @@ import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
 import kirei.shootingstars.constants.Fonts;
+import kirei.shootingstars.constants.GameDialogue;
 import kirei.shootingstars.constants.Interact;
 import kirei.shootingstars.constants.WidgetTags;
 import kirei.shootingstars.constants.ZIndexes;
@@ -86,7 +87,7 @@ public class DeleteData implements Renderable, Interactable {
             return;
         }
 
-        String text = "Delete Data";
+        String text = GameDialogue.deleteDataButton;
 
         g.setColor(Color.BLACK);
         g.fillRoundRect(this.position[0] - borderHeight / 2, this.position[1] - borderHeight / 2, size[0] + borderHeight, size[1] + borderHeight, rounded + borderHeight, rounded + borderHeight);
