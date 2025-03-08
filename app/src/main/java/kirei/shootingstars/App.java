@@ -231,7 +231,7 @@ public class App {
 
     public void onTimerIteration() {
         // ---- Log ----
-        Logs.log(Logs.TIMER_INTEARION);
+        Logs.log(Logs.TIMER_ITERATION);
         // ----Set widget values ----
         for (TimerWidget w : this.gpanel.getWidgetsByClass(TimerWidget.class)) {
             w.setTime(timeRemaining);
@@ -257,10 +257,8 @@ public class App {
 
         // ---- Update the score and log the click, if not ititial execution ----
         if (!init) {
-            Logs.log(Logs.TAGRET_HIT);
-            System.out.println(this.score);
+            Logs.log(Logs.TARGET_HIT);
             this.score += TARGET_SCORE * 2;
-            System.out.println(this.score);
             for (ScoreWidget w : this.gpanel.getWidgetsByClass(ScoreWidget.class)) {
                 w.setScore(this.score);
             }
