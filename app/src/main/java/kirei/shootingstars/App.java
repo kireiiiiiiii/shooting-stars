@@ -79,7 +79,7 @@ public class App {
         Logs.log(Logs.APP_START);
         // ---- Setup the GPanel ----
         double[] windowSize = ScreenUtil.getAppWindowSize();
-        this.gpanel = new GPanel(FPS, (int) windowSize[0], (int) windowSize[1], false, GameDialogue.appName);
+        this.gpanel = new GPanel(FPS, (int) windowSize[0], (int) windowSize[1], false, "Shooting Stars");
         this.gpanel.setIcon(Textures.ICON);
         gpanel.getAppFrame().setBackground(Colors.BACKROUND);
         onUISetup();
@@ -305,7 +305,7 @@ public class App {
         // ---- Change fonts ----
         Fonts.setFonts();
         // ---- Set app window title ----
-        this.gpanel.setName(GameDialogue.appName);
+        // this.gpanel.setName(GameDialogue.appName);
         // ---- Log ----
         Logs.log(Logs.LANGUAGE_SET);
         // ---- Save settings----
