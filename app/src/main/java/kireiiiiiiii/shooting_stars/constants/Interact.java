@@ -1,27 +1,7 @@
 /*
- * Author: Matěj Šťastný
+ * Author: Matěj Šťastný aka Kirei
  * Date created: 9/11/2024
- * Github link: https://github.com/kireiiiiiiii/ShootingStars
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
+ * Github link: https://github.com/kireiiiiiiii/shooting-stars
  */
 
 package kireiiiiiiii.shooting_stars.constants;
@@ -33,7 +13,7 @@ import kireiiiiiiii.shooting_stars.common.Links;
  * Constants class with all possbile events that can be triggered by user
  * interaction. These events are then referenced in objects with the
  * {@code Interactable} interface
- * 
+ *
  */
 public class Interact {
 
@@ -84,4 +64,5 @@ public class Interact {
     public static final Runnable TARGET_INTERACTED = () -> {
         App.app.onTargetHit(false);
     };
+
 }

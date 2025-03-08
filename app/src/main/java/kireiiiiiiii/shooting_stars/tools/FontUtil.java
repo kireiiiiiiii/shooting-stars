@@ -1,27 +1,7 @@
 /*
- * Author: Matěj Šťastný
+ * Author: Matěj Šťastný aka Kirei
  * Date created: 5/13/2024
- * Github link: https://github.com/kireiiiiiiii/ShootingStars
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
+ * Github link: https://github.com/kireiiiiiiii/shooting-stars
  */
 
 package kireiiiiiiii.shooting_stars.tools;
@@ -30,21 +10,14 @@ import java.awt.Font;
 import java.awt.FontMetrics;
 import java.io.File;
 
-/**
- * A utility method class for handeling {@code java/awt/Font} objects, like
- * loading custom fonts from file, or measuring them.
- * 
- */
 public class FontUtil {
 
-    /////////////////
-    // Font file handeling methods
-    ////////////////
+    // Resource loading ----------------------------------------------------------
 
     /**
      * Loads a {@code Font} from a {@code .ttf} of {@code .oft} font files from a
      * path given.
-     * 
+     *
      * @param path - path of the font file.
      * @return A {@code Font} object reference, or {@code null} if Exception.
      */
@@ -57,14 +30,12 @@ public class FontUtil {
         }
     }
 
-    /////////////////
-    // Measurment calculating methods
-    ////////////////
+    // Positions -----------------------------------------------------------------
 
     /**
      * Calculates the centered position of a text in a {@code JPanel}, and return a
      * position that can be taken as input to the {@code drawString()} method.
-     * 
+     *
      * @param width  - width of the rectangle that the position is being calculated
      *               from. Usually width of the {@code JPanel}.
      * @param height - height of the rectangle that the position is being calculated
@@ -72,9 +43,8 @@ public class FontUtil {
      * @param fm     - {@code FontMetric} of the target font.
      * @param text   - target text.
      * @return an {@code int} array of lenght 2, where index 0 represents {@code x},
-     *         and index 1
-     *         represents {@code y} positions.
-     * 
+     *         and index 1 represents {@code y} positions.
+     *
      */
     public static int[] getCenteredPos(int width, int height, FontMetrics fm, String text) {
         int textWidth = fm.stringWidth(text);
@@ -89,7 +59,7 @@ public class FontUtil {
     /**
      * Calculates the origin point to render the text bottom-left of the given
      * point.
-     * 
+     *
      * @param fm    - FontMetrics object to get text dimensions
      * @param text  - The text to be rendered
      * @param point - The point represented by an int array [x, y]
@@ -116,7 +86,7 @@ public class FontUtil {
 
     /**
      * Calculates the point to render the text bottom-left of the given point.
-     * 
+     *
      * @param fm    - FontMetrics object to get text dimensions
      * @param text  - The text to be rendered
      * @param point - The point represented by an int array [x, y]
@@ -140,4 +110,5 @@ public class FontUtil {
         int[] pos = { calcX, calcY };
         return pos;
     }
+
 }

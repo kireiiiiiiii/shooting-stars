@@ -1,27 +1,7 @@
 /*
- * Author: Matěj Šťastný
+ * Author: Matěj Šťastný aka Kirei
  * Date created: 6/15/2024
- * Github link: https://github.com/kireiiiiiiii/ShootingStars
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
+ * Github link: https://github.com/kireiiiiiiii/shooting-stars
  */
 
 package kireiiiiiiii.shooting_stars.constants;
@@ -35,10 +15,6 @@ import javax.imageio.ImageIO;
 
 public class Textures {
 
-    /////////////////
-    // Constants
-    ////////////////
-
     public static final Image STAR = setImage("star.png");
     public static final Image LINK_ICON = setImage("link_icon.png");
     public static final Image SETTINGS_ICON = setImage("settings_icon.png");
@@ -50,31 +26,6 @@ public class Textures {
     public static final Image HOME_ICON = setImage("home_icon.png");
     public static final Image ICON = setImage("icon.png");
 
-    /////////////////
-    // Private methods
-    ////////////////
-
-    /**
-     * Gets the input stream of an image.
-     * 
-     * @param imageName - file name of the target image.
-     * @return a new {@code Image} object.
-     */
-    private static InputStream getImageInputStream(String imageName) {
-        InputStream resource = Textures.class.getResourceAsStream(imageName);
-        if (resource == null) {
-            System.out.println("Input stream is null for texture: " + imageName);
-        }
-        return resource;
-    }
-
-    /**
-     * Loads an image from the resources folder and returns it as an Image object.
-     * 
-     * @param path - file name of the image.
-     * @return the loaded Image object or {@code null} if {@code IOExeption} occurs,
-     *         or the {@code InputStream} is {@code null}
-     */
     private static Image setImage(String imageName) {
         String path = "/textures/" + imageName;
         InputStream imageStream = getImageInputStream(path);
@@ -88,6 +39,14 @@ public class Textures {
             return null;
         }
         return img;
+    }
+
+    private static InputStream getImageInputStream(String imageName) {
+        InputStream resource = Textures.class.getResourceAsStream(imageName);
+        if (resource == null) {
+            System.out.println("Input stream is null for texture: " + imageName);
+        }
+        return resource;
     }
 
 }

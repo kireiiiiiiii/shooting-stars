@@ -1,88 +1,38 @@
 /*
- * Author: Matěj Šťastný
+ * Author: Matěj Šťastný aka Kirei
  * Date created: 5/16/2024
- * Github link: https://github.com/kireiiiiiiii/ShootingStars
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
+ * Github link: https://github.com/kireiiiiiiii/shooting-stars
  */
 
 package kireiiiiiiii.shooting_stars.tools;
 
-import java.awt.*;
-import java.awt.image.*;
+import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.RenderingHints;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
-/**
- * A utillity method class designed to handle images
- * 
- */
 public class ImageUtil {
 
-    /////////////////
-    // Image from file getter methods
-    ////////////////
+    // Resource loading ----------------------------------------------------------
 
-    /**
-     * Reads an image from a file and than creates and return a new {@code Image}
-     * object reference.
-     * 
-     * @param path - path/name of the target image file
-     * @return a new {@code Image} from target file.
-     * @throws IOException
-     */
     public static Image loadImageFromFile(String path) throws IOException {
         File imageFile = new File(path);
         BufferedImage bufferedImage = ImageIO.read(imageFile);
         return new ImageIcon(bufferedImage).getImage();
     }
 
-    /**
-     * Reads an image from a file and than creates and return a new {@code Image}
-     * object reference.
-     * 
-     * @param imageFile - target image {@code File} object.
-     * @return a new {@code Image} from target file.
-     * @throws IOException
-     */
     public static Image loadImageFromFile(File imageFile) throws IOException {
         BufferedImage bufferedImage = ImageIO.read(imageFile);
         return new ImageIcon(bufferedImage).getImage();
     }
 
-    /////////////////
-    // Image scaling methods
-    ////////////////
+    // Scaling -------------------------------------------------------------------
 
-    /**
-     * Scales an {@code Image} object to the desired width and height.
-     * 
-     * @param image  - target {@code Image} object.
-     * @param width  - target width of the image.
-     * @param height - target height of the omage.
-     * @return a new {@code Image} object reference of the scaled image.
-     */
     public static Image scaleImage(Image image, int width, int height) {
         BufferedImage scaledImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
         Graphics2D graphics2D = scaledImage.createGraphics();
@@ -98,14 +48,6 @@ public class ImageUtil {
         return scaledImage;
     }
 
-    /**
-     * Scales an {@code Image} object to a desired width, while leaving the original
-     * height of the image.
-     * 
-     * @param image - target {@code Image} object.
-     * @param width - target width.
-     * @return a new {@code Image} object reference of the scaled image.
-     */
     public static Image scaleToWidth(Image image, int width) {
         int height = image.getHeight(null);
 
@@ -123,14 +65,6 @@ public class ImageUtil {
         return scaledImage;
     }
 
-    /**
-     * Scales an {@code Image} object to a desired height, while leaving the
-     * original width of the image.
-     * 
-     * @param image  - target {@code Image} object.
-     * @param height - target height.
-     * @return a new {@code Image} object reference of the scaled image.
-     */
     public static Image scaleToHeight(Image image, int height) {
         int width = image.getWidth(null);
 

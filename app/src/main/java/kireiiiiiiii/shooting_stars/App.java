@@ -1,38 +1,18 @@
 /*
- * Author: Matěj Šťastný
+ * Author: Matěj Šťastný aka Kirei
  * Date created: 6/13/2024
- * Github link:  https://github.com/kireiiiiiiii/ShootingStars
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
+ * Github link:  https://github.com/kireiiiiiiii/shooting-stars
  */
 
 package kireiiiiiiii.shooting_stars;
 
-import java.awt.event.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 import javax.swing.SwingUtilities;
-
-import java.util.ArrayList;
 
 import kireiiiiiiii.shooting_stars.common.AdvancedVariable;
 import kireiiiiiiii.shooting_stars.common.GPanel;
@@ -67,15 +47,7 @@ import kireiiiiiiii.shooting_stars.ui.menu.links_panel.InstagramLink;
 import kireiiiiiiii.shooting_stars.ui.menu.settings_panel.ChangeButton;
 import kireiiiiiiii.shooting_stars.ui.menu.settings_panel.LanguageTitle;
 
-/**
- * Main game object.
- * 
- */
 public class App {
-
-    /////////////////
-    // Constatns
-    ////////////////
 
     public static final String APP_NAME = "ShootingStars";
     private static final int GAME_LENGHT = 20;
@@ -84,40 +56,21 @@ public class App {
     private static final int FPS = 60;
     public final int WINDOW_PADDING = 10;
 
-    /////////////////
-    // Variables
-    ////////////////
-
     public static App app;
     private GPanel gpanel;
     private AdvancedVariable<Integer> topScore;
-
-    /////////////////
-    // Game variables
-    ////////////////
 
     private PausableTimer timer;
     private int timeRemaining;
     private int targetRadius;
     private int score;
-    private boolean paused; // is the game in the pause menu?
+    private boolean paused;
 
-    /////////////////
-    // Constructor
-    ////////////////
+    // Main ----------------------------------------------------------------------
 
-    /**
-     * Main method.
-     * 
-     * @param args
-     */
     public static void main(String[] args) {
         SwingUtilities.invokeLater(App::new);
     }
-
-    /////////////////
-    // Constructor
-    ////////////////
 
     public App() {
         app = this;
@@ -138,14 +91,8 @@ public class App {
         onGoToMenu();
     }
 
-    /////////////////
-    // Events
-    ////////////////
+    // Events --------------------------------------------------------------------
 
-    /**
-     * Switches the game back to the menu.
-     * 
-     */
     public void onGoToMenu() {
         Keybinds.setEnabledAll(false);
         Keybinds.setEnabled(true, Keybinds.START_KEY);
@@ -171,10 +118,6 @@ public class App {
         this.gpanel.showTaggedWidgets(WidgetTags.LINKS);
     }
 
-    /**
-     * Starts the game.
-     * 
-     */
     public void onGameStart() {
         // ---- Log & variable setup ----
         Logs.log(Logs.GAME_START);
@@ -204,7 +147,7 @@ public class App {
 
     /**
      * Restarts the game.
-     * 
+     *
      */
     public void onGameRestart() {
         // ---- Log & variable setup ----
@@ -229,11 +172,6 @@ public class App {
         onTargetHit(true);
     }
 
-    /**
-     * Toggles the game pause. If the game is paused, this method will resume it,
-     * and if its not paused, it pauses it.
-     * 
-     */
     public void onTogglePause() {
         if (paused) {
             onGameResumed();
@@ -243,10 +181,6 @@ public class App {
         this.paused = !this.paused;
     }
 
-    /**
-     * Puts the game into the pause menu.
-     * 
-     */
     public void onGamePause() {
         // ---- Log ----
         Logs.log(Logs.GAME_PAUSE);
@@ -259,10 +193,6 @@ public class App {
         this.timer.pause();
     }
 
-    /**
-     * Puts the game out of the pause menu.
-     * 
-     */
     public void onGameResumed() {
         // ---- Log ----
         Logs.log(Logs.GAME_RESUMED);
@@ -275,10 +205,6 @@ public class App {
         this.timer.resume();
     }
 
-    /**
-     * Called on game over.
-     * 
-     */
     public void onGameEnd() {
         // ---- Log ----
         Logs.log(Logs.GAME_OVER);
@@ -303,10 +229,6 @@ public class App {
         onTopscoreFileLoad();
     }
 
-    /**
-     * Called on every cycle of the game timer.
-     * 
-     */
     public void onTimerIteration() {
         // ---- Log ----
         Logs.log(Logs.TIMER_INTEARION);
@@ -317,11 +239,6 @@ public class App {
         this.timeRemaining--;
     }
 
-    /**
-     * Called when the target was succesfuly hit by the player.
-     * 
-     * @param init - initial call?
-     */
     public void onTargetHit(boolean init) {
         // ---- Calculate next position ----
         int minY = 0;
@@ -350,20 +267,6 @@ public class App {
         }
     }
 
-    // public void onTargetMisclicked() {
-    // // ---- Log ----
-    // Logs.log(Logs.TAGRET_NOT_HIT);
-    // // ---- Update ----
-    // this.score = Math.max(0, this.score - TARGET_SCORE);
-    // for (ScoreWidget w : this.gpanel.getWidgetsByClass(ScoreWidget.class)) {
-    // w.setScore(this.score);
-    // }
-    // }
-
-    /**
-     * Loads the topscore from the user file.
-     * 
-     */
     public void onTopscoreFileLoad() {
         // ---- Log ----
         Logs.log(Logs.TOPSCORE_FILE_LOAD);
@@ -380,10 +283,6 @@ public class App {
         }
     }
 
-    /**
-     * Saves the current topscore to the user file.
-     * 
-     */
     public void onTopscoreFileSave() {
         // ---- Log ----
         Logs.log(Logs.TOPSCORE_FILE_SAVED);
@@ -395,12 +294,6 @@ public class App {
         }
     }
 
-    /**
-     * Changes the language.
-     * 
-     * @param next - determining if the language the porgram is changing to is the
-     *             next or previous on the list.
-     */
     public void onLanguageChange(boolean next) {
         // ---- Change dialogues ----
         if (next) {
@@ -418,13 +311,6 @@ public class App {
         Settings.save();
     }
 
-    /**
-     * Method to determine if a interactable was clicked. This is achieved by
-     * sorting out the not visible or not interacted widgets, and than sorting then
-     * based on their Z-Index. The one on top is the one the user interacted with.
-     * 
-     * @param e - {@code MouseEvent} of the click
-     */
     public void onMouseClicked(MouseEvent e) {
         ArrayList<Renderable> widgets = this.gpanel.getInteractables();
         // Clear not visible widgets
@@ -481,10 +367,6 @@ public class App {
 
     }
 
-    /**
-     * Sets up all the UI elements.
-     * 
-     */
     public void onUISetup() {
 
         // Screen dimension for clarity
@@ -526,24 +408,18 @@ public class App {
                 (Renderable) new ScoreBoard(gameov_scoreboard), (Renderable) new GameOverScreen(appSize)));
     }
 
-    /////////////////
-    // Mouse events override methods
-    ////////////////
+    // Interactions --------------------------------------------------------------
 
     public void mouseDragged(MouseEvent e) {
-
     }
 
     public void mouseMoved(MouseEvent e) {
-
     }
 
     public void mouseClicked(MouseEvent e) {
-
     }
 
     public void mousePressed(MouseEvent e) {
-
     }
 
     public void mouseReleased(MouseEvent e) {
@@ -551,16 +427,10 @@ public class App {
     }
 
     public void mouseEntered(MouseEvent e) {
-
     }
 
     public void mouseExited(MouseEvent e) {
-
     }
-
-    /////////////////
-    // Key events override methods
-    ////////////////
 
     public void keyPressed(KeyEvent e) {
         Keybinds.interact(e);
@@ -574,21 +444,8 @@ public class App {
 
     }
 
-    /////////////////
-    // Timer methods
-    ////////////////
+    // Private -------------------------------------------------------------------
 
-    /**
-     * This method initiliazes the timer. It first sets the time left to the deafult
-     * game lenght, and than it starts a timer.
-     * </p>
-     * On each iteration of the timer, the time left variable is changed, and the
-     * time widget on the game panel is updated.
-     * </p>
-     * When the timer is finished, the event method {@code onGameFinished} will
-     * excecute.
-     * 
-     */
     private void initializeTimer() {
         if (this.timer != null) {
             timer.forceStop();

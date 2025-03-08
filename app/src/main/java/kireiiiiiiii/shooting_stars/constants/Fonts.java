@@ -1,27 +1,7 @@
 /*
- * Author: Matěj Šťastný
+ * Author: Matěj Šťastný aka Kirei
  * Date created: 5/16/2024
- * Github link: https://github.com/kireiiiiiiii/ShootingStars
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
+ * Github link: https://github.com/kireiiiiiiii/shooting-stars
  */
 
 package kireiiiiiiii.shooting_stars.constants;
@@ -31,36 +11,15 @@ import java.awt.FontFormatException;
 import java.io.IOException;
 import java.io.InputStream;
 
-/**
- * Constants class with fonts, also handeling their loading.
- * 
- */
 public class Fonts {
 
-    /////////////////
-    // Constants
-    ////////////////
-
     public static final Font DEFAULT_FONT = new Font("Arial", Font.PLAIN, 20);
-
-    /////////////////
-    // Variables
-    ////////////////
 
     public static Font headingFont = DEFAULT_FONT;
     public static Font textFont = DEFAULT_FONT;
 
-    /////////////////
-    // Setter
-    ////////////////
+    // Modifiers -----------------------------------------------------------------
 
-    /**
-     * Sets the font from it's name using the {@code InputStream} object.
-     * 
-     * @param fontType - type of the font. Will be formated, so the case doesn't
-     *                 matter.
-     * @return loaded {@code Font} object or the default font.
-     */
     private static Font setFont(String fontType) {
         if (fontType.equals("defaultFont")) {
             return DEFAULT_FONT;
@@ -73,9 +32,12 @@ public class Fonts {
         }
     }
 
-    /////////////////
-    // Accesors
-    ////////////////
+    public static void setFonts() {
+        setHeadingFont(GameDialogue.headingFont);
+        setTextFont(GameDialogue.textFont);
+    }
+
+    // Getters -------------------------------------------------------------------
 
     public static Font heading() {
         return headingFont;
@@ -85,25 +47,8 @@ public class Fonts {
         return textFont;
     }
 
-    /////////////////
-    // Modifiers
-    ////////////////
+    // Private -------------------------------------------------------------------
 
-    public static void setFonts() {
-        setHeadingFont(GameDialogue.headingFont);
-        setTextFont(GameDialogue.textFont);
-    }
-
-    /////////////////
-    // Private methods
-    ////////////////
-
-    /**
-     * Get's the {@code InputStream} of a font.
-     * 
-     * @param fontName - file name of the font.
-     * @return an {@code InputStream} object.
-     */
     private static InputStream getFontInputStream(String fontName) {
         InputStream resource = Fonts.class.getResourceAsStream(fontName);
         if (resource == null) {
@@ -119,4 +64,5 @@ public class Fonts {
     private static void setTextFont(String fileName) {
         textFont = setFont(fileName);
     }
+
 }

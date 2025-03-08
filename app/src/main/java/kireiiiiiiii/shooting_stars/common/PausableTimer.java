@@ -1,27 +1,7 @@
 /*
- * Author: Matěj Šťastný
+ * Author: Matěj Šťastný aka Kirei
  * Date created: 5/9/2024
- * Github link:  https://github.com/kireiiiiiiii/ShootingStars
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
+ * Github link:  https://github.com/kireiiiiiiii/shooting-stars
  */
 
 package kireiiiiiiii.shooting_stars.common;
@@ -29,15 +9,7 @@ package kireiiiiiiii.shooting_stars.common;
 import java.util.Timer;
 import java.util.TimerTask;
 
-/**
- * An timer object with the ability to pause, resume and completely stop.
- * 
- */
 public class PausableTimer {
-
-    /////////////////
-    // Variables
-    ////////////////
 
     private Timer timer;
     private long delay;
@@ -48,15 +20,13 @@ public class PausableTimer {
     private Runnable onFinishTask;
     private Runnable onExecution;
 
-    /////////////////
-    // Constructors
-    ////////////////
+    // Constructor ---------------------------------------------------------------
 
     /**
      * Default contructor. Sets the given parameters.
      * </p>
      * DOESN'T AUTOMATICALLY START THE TIMER!
-     * 
+     *
      * @param delay
      * @param executions
      * @param onFinishTask
@@ -73,14 +43,8 @@ public class PausableTimer {
         this.onExecution = onExecution;
     }
 
-    /////////////////
-    // Timer controlls
-    ////////////////
+    // Conntrolls ----------------------------------------------------------------
 
-    /**
-     * Starts excecuing the timer.
-     * 
-     */
     public void start() {
         if (!isRunning) {
             isRunning = true;
@@ -88,7 +52,6 @@ public class PausableTimer {
                 @Override
                 public void run() {
                     if (!isPaused) {
-                        // Do whatever you want the timer to do
                         onExecution.run();
                         currentExecution++;
                         if (currentExecution == executions) {
@@ -100,10 +63,6 @@ public class PausableTimer {
         }
     }
 
-    /**
-     * Pauses the timer.
-     * 
-     */
     public void pause() {
         isPaused = true;
     }
@@ -125,16 +84,15 @@ public class PausableTimer {
         isRunning = false;
     }
 
-    /////////////////
-    // Accesors
-    ////////////////
+    // Accesors ------------------------------------------------------------------
 
     public long getTimeRemaining() {
         if (!isRunning) {
-            return 0; // Timer is not running
+            return 0;
         }
         long currentTime = System.currentTimeMillis();
         long nextExecutionTime = currentTime + (executions - currentExecution - 1) * delay;
         return nextExecutionTime - currentTime;
     }
+
 }

@@ -1,48 +1,17 @@
 /*
- * Author: Matěj Šťastný
+ * Author: Matěj Šťastný aka Kirei
  * Date created: 6/15/2024
- * Github link: https://github.com/kireiiiiiiii/ShootingStars
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
+ * Github link: https://github.com/kireiiiiiiii/shooting-stars
  */
 
 package kireiiiiiiii.shooting_stars.constants;
 
-/**
- * Constants class with zlayers.
- */
 public class ZIndexes {
-
-    /////////////////
-    // Menu panel
-    ////////////////
 
     public static final int MENU_BUTTONS = 9;
     public static final int MENU_PANEL = 10;
     public static final int POPUP_PANEL_BUTTONS = 7;
     public static final int POPUP_PANEL = 8;
-
-    /////////////////
-    // Game panel
-    ////////////////
 
     public static final int GAME_WIDGETS = 8;
     public static final int BACKROUND = 10;

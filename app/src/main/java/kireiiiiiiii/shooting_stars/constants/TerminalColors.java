@@ -1,46 +1,18 @@
 /*
- * Author: Matěj Šťastný
+ * Author: Matěj Šťastný aka Kirei
  * Date created: 6/15/2024
- * Github link: https://github.com/kireiiiiiiii/ShootingStars
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
+ * Github link: https://github.com/kireiiiiiiii/shooting-stars
  */
 
 package kireiiiiiiii.shooting_stars.constants;
 
-/**
- * Color constants to create colorful terminal logs.
- * 
- */
 public class TerminalColors {
 
-    /////////////////
-    // Reset
-    ////////////////
+    // Reset ---------------------------------------------------------------------
 
     public static final String RESET = "\u001B[0m";
 
-    /////////////////
-    // Text colors
-    ////////////////
+    // Text ----------------------------------------------------------------------
 
     public static final String BLACK = "\u001B[30m";
     public static final String RED = "\u001B[31m";
@@ -51,9 +23,7 @@ public class TerminalColors {
     public static final String CYAN = "\u001B[36m";
     public static final String WHITE = "\u001B[37m";
 
-    /////////////////
-    // Bright text colors
-    ////////////////
+    // Bright text ---------------------------------------------------------------
 
     public static final String BRIGHT_BLACK = "\u001B[90m";
     public static final String BRIGHT_RED = "\u001B[91m";
@@ -64,9 +34,7 @@ public class TerminalColors {
     public static final String BRIGHT_CYAN = "\u001B[96m";
     public static final String BRIGHT_WHITE = "\u001B[97m";
 
-    /////////////////
-    // Backround colors
-    ////////////////
+    // Background ----------------------------------------------------------------
 
     public static final String BACKGROUND_BLACK = "\u001B[40m";
     public static final String BACKGROUND_RED = "\u001B[41m";
@@ -77,9 +45,7 @@ public class TerminalColors {
     public static final String BACKGROUND_CYAN = "\u001B[46m";
     public static final String BACKGROUND_WHITE = "\u001B[47m";
 
-    /////////////////
-    // Backround bright colors
-    ////////////////
+    // Bright background ---------------------------------------------------------
 
     public static final String BRIGHT_BACKGROUND_BLACK = "\u001B[100m";
     public static final String BRIGHT_BACKGROUND_RED = "\u001B[101m";

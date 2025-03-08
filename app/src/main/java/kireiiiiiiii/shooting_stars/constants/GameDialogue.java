@@ -1,57 +1,21 @@
 /*
- * Author: Matěj Šťastný
+ * Author: Matěj Šťastný aka Kirei
  * Date created: 6/15/2024
- * Github link: https://github.com/kireiiiiiiii/ShootingStars
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
+ * Github link: https://github.com/kireiiiiiiii/shooting-stars
  */
 
 package kireiiiiiiii.shooting_stars.constants;
 
-import kireiiiiiiii.shooting_stars.tools.SpreadsheetUtil;
-
 import java.util.ArrayList;
 
-/**
- * Constant class with all the game dialogues.
- * 
- */
-public class GameDialogue {
+import kireiiiiiiii.shooting_stars.tools.SpreadsheetUtil;
 
-    ////////////////
-    // Constants
-    ////////////////
+public class GameDialogue {
 
     private static final String SPREADSHEET_FILENAME = "dialogue";
     private static final String SPREADSHEET_NAME = "dialogue";
 
-    ////////////////
-    // Variables
-    ////////////////
-
     private static int currLanguageIndex = 0;
-
-    ////////////////
-    // Dialogue varibles
-    ////////////////
 
     // ---- Language name ----
     public static String languageName;
@@ -73,15 +37,12 @@ public class GameDialogue {
     // ---- Pause screen ----
     public static String pause;
 
-    /////////////////
-    // Modifiers
-    ////////////////
+    // Modifiers -----------------------------------------------------------------
 
     /**
      * Set's the current language to the next one on the language list. If the index
      * is higher that the total language count, it will be set to zero to cycle the
      * process.
-     * 
      */
     public static void setNextLanguage() {
         int languageCount = getLanguages().size();
@@ -96,7 +57,6 @@ public class GameDialogue {
      * Set's the current language to the previous one on the language list. If the
      * index is smaller than 0, it will be set to the last idex of the language list
      * to cycle the prosess.
-     * 
      */
     public static void setPreviousLanguage() {
         int languageCount = getLanguages().size();
@@ -112,7 +72,7 @@ public class GameDialogue {
      * language used. For invalide language, input -1 and the method will set the
      * language to the first one on the language list. If the index is out of bounds
      * of the language list, it will also be set to the first language on the list.
-     * 
+     *
      * @param index - language index.
      */
     public static void initialLanguageSet(int index) {
@@ -122,13 +82,11 @@ public class GameDialogue {
         changeLanguage(index);
     }
 
-    /////////////////
-    // Accesors
-    ////////////////
+    // Getters -------------------------------------------------------------------
 
     /**
      * Gets all of the available languages from the dialogue spreadsheet.
-     * 
+     *
      * @return an {@code ArrayList} of strings with names of the languages.
      */
     public static ArrayList<String> getLanguages() {
@@ -139,24 +97,17 @@ public class GameDialogue {
 
     /**
      * Accesor method for the current language index.
-     * 
+     *
      * @return and {@code int} of the index.
      */
     public static int getLanguageIndex() {
         return currLanguageIndex;
     }
 
-    /////////////////
-    // Private methods
-    ////////////////
+    // Private -------------------------------------------------------------------
 
-    /**
-     * Changes all the dialogoue fields to the language determined by the language
-     * index from the dialogue spreadsheet.
-     * 
-     * @param languageIndex - language index.
-     */
     private static void changeLanguage(int languageIndex) {
+
         // ---- Set variables ---
         currLanguageIndex = languageIndex;
 

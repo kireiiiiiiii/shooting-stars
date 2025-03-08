@@ -1,43 +1,15 @@
 /*
- * Author: Matěj Šťastný
+ * Author: Matěj Šťastný aka Kirei
  * Date created: 5/16/2024
- * Github link: https://github.com/kireiiiiiiii/ShootingStars
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
+ * Github link: https://github.com/kireiiiiiiii/shooting-stars
  */
 
 package kireiiiiiiii.shooting_stars.constants;
 
-import java.awt.event.*;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
 public class Keybinds {
-
-    /////////////////
-    // Enabled
-    ////////////////
-
-    /////////////////
-    // Keybind constants
-    ////////////////
 
     private static ArrayList<Keybind> keybinds;
     private static boolean initialized = false;

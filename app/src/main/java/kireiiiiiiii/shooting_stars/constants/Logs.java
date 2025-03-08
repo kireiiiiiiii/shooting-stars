@@ -1,27 +1,7 @@
 /*
- * Author: Matěj Šťastný
+ * Author: Matěj Šťastný aka Kirei
  * Date created: 6/15/2024
- * Github link: https://github.com/kireiiiiiiii/ShootingStars
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
+ * Github link: https://github.com/kireiiiiiiii/shooting-stars
  */
 
 package kireiiiiiiii.shooting_stars.constants;
@@ -33,15 +13,9 @@ import java.io.PrintWriter;
 import java.time.LocalTime;
 import java.util.ArrayList;
 
-/**
- * Class handeling the program logs, terminal and file.
- * 
- */
 public class Logs {
 
-    /////////////////
-    // Log constants
-    ////////////////
+    // Logs ----------------------------------------------------------------------
 
     public static final String APP_START = "App start";
 
@@ -61,9 +35,7 @@ public class Logs {
 
     public static final String LANGUAGE_SET = "Language set to " + GameDialogue.languageName;
 
-    /////////////////
-    // Color constants
-    ////////////////
+    // Colors --------------------------------------------------------------------
 
     private static final String APP_LOG_COLOR = TerminalColors.BACKGROUND_RED;
     private static final String GAME_LOG_COLOR = TerminalColors.BACKGROUND_GREEN;
@@ -72,23 +44,16 @@ public class Logs {
     private static final String TIMER_LOG_COLOR = TerminalColors.BACKGROUND_YELLOW;
     private static final String SETTINGS_SET_COLOR = TerminalColors.BACKGROUND_WHITE;
 
-    /////////////////
-    // Variables
-    ////////////////
+    // Logging -------------------------------------------------------------------
 
     private static ArrayList<String> logs = new ArrayList<String>();
-
-    /////////////////
-    // Methods
-    ////////////////
 
     public static void log(String logInput) {
         String logColor;
 
         if (logInput.equals(APP_START)) {
             logColor = APP_LOG_COLOR;
-        } else if (logInput.equals(GAME_START) || logInput.equals(GAME_RESTART) || logInput.equals(GAME_OVER)
-                || logInput.equals(GAME_PAUSE) || logInput.equals(GAME_RESUMED)) {
+        } else if (logInput.equals(GAME_START) || logInput.equals(GAME_RESTART) || logInput.equals(GAME_OVER) || logInput.equals(GAME_PAUSE) || logInput.equals(GAME_RESUMED)) {
             logColor = GAME_LOG_COLOR;
         } else if (logInput.equals(TAGRET_HIT) || logInput.equals(TAGRET_NOT_HIT)) {
             logColor = TARGET_LOG_COLOR;
@@ -112,14 +77,12 @@ public class Logs {
         }
     }
 
-    /////////////////
-    // Saving
-    ////////////////
+    // Log file ------------------------------------------------------------------
 
     /**
      * Wrties the inside of an ArrayList into a file, fully clearing the file
      * beforehand. Puts every element of the list on a separate line
-     * 
+     *
      * @param list - ArrayList of Strings
      * @param file - target file
      * @throws IOException FileWriter exception
