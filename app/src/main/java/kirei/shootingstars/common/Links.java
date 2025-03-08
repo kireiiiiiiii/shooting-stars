@@ -16,7 +16,7 @@ import kirei.shootingstars.constants.Logs;
 public class Links {
 
     public static String INSTAGRAM = "https://www.instagram.com/_kireiiiiiiii";
-    public static String GITHUB = "https://github.com/kireiiiiiiii/ShootingStars";
+    public static String GITHUB = "https://github.com/kireiiiiiiii/shooting-stars";
 
     public static void openURL(String url) {
         try {
