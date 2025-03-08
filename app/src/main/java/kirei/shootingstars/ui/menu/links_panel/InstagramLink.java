@@ -26,11 +26,14 @@
 
 package kirei.shootingstars.ui.menu.links_panel;
 
-import java.awt.Graphics2D;
 import java.awt.Container;
+import java.awt.Font;
+import java.awt.Graphics2D;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
+import kirei.shootingstars.constants.Colors;
+import kirei.shootingstars.constants.Fonts;
 import kirei.shootingstars.constants.Interact;
 import kirei.shootingstars.constants.Textures;
 import kirei.shootingstars.constants.WidgetTags;
@@ -85,6 +88,9 @@ public class InstagramLink implements Renderable, Interactable {
         }
 
         g.drawImage(ImageUtil.scaleImage(Textures.INSTAGRAM_LOGO, SIZE[0], SIZE[1]), position[0], position[1], img);
+        g.setColor(Colors.MAIN_GRAY);
+        g.setFont(Fonts.text().deriveFont(Font.BOLD, 50));
+        g.drawString("My Instagram", position[0] - 130, position[1] - 30);
     }
 
     @Override

@@ -28,9 +28,12 @@ package kirei.shootingstars.ui.menu.links_panel;
 
 import java.awt.Graphics2D;
 import java.awt.Container;
+import java.awt.Font;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
+import kirei.shootingstars.constants.Colors;
+import kirei.shootingstars.constants.Fonts;
 import kirei.shootingstars.constants.Interact;
 import kirei.shootingstars.constants.Textures;
 import kirei.shootingstars.constants.WidgetTags;
@@ -85,6 +88,10 @@ public class GithubLink implements Renderable, Interactable {
         }
 
         g.drawImage(ImageUtil.scaleImage(Textures.GITHUB_LOGO, SIZE[0], SIZE[1]), position[0], position[1], img);
+        g.setColor(Colors.MAIN_GRAY);
+        g.setFont(Fonts.text().deriveFont(Font.BOLD, 50));
+        g.drawString("Project", position[0] - 50, position[1] - 90);
+        g.drawString("GitHub", position[0] - 40, position[1] - 40);
     }
 
     @Override
