@@ -1,4 +1,4 @@
-val mainClassName = "kireiiiiiiii.shooting_stars.App"
+val mainClassName = "kirei.shootingstars.App"
 val projectName = "shooting-stars"
 
 plugins {
