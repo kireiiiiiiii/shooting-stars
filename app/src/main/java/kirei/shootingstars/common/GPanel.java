@@ -229,7 +229,12 @@ public class GPanel extends JPanel implements MouseListener, MouseMotionListener
 
     public void setIcon(Image icon) {
         Taskbar taskbar = Taskbar.getTaskbar();
-        taskbar.setIconImage(icon);
+        try {
+            taskbar.setIconImage(icon);
+        } catch (UnsupportedOperationException e) {
+            // Fallback for Windows
+            this.appFrame.setIconImage(icon);
+        }
     }
 
     // Widget visibility ---------------------------------------------------------
