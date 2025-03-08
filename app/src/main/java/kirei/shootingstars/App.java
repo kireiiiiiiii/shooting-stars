@@ -45,6 +45,7 @@ import kirei.shootingstars.ui.menu.PopUpPanelWindget;
 import kirei.shootingstars.ui.menu.links_panel.GithubLink;
 import kirei.shootingstars.ui.menu.links_panel.InstagramLink;
 import kirei.shootingstars.ui.menu.settings_panel.ChangeButton;
+import kirei.shootingstars.ui.menu.settings_panel.DeleteData;
 import kirei.shootingstars.ui.menu.settings_panel.LanguageTitle;
 
 public class App {
@@ -105,6 +106,7 @@ public class App {
     }
 
     public void onGoToOptions() {
+        this.gpanel.getWidgetsByClass(DeleteData.class).forEach(DeleteData::show);
         for (MenuButton w : this.gpanel.getWidgetsByClass(MenuButton.class)) {
             w.setInteract(false);
         }
@@ -380,6 +382,7 @@ public class App {
         int[] options_instagramBtn = { width / 2 - 300, height / 2 - 50 };
         int[] options_gitBtn = { width / 2 + 130, height / 2 - 50 };
         int[] options_currlan = { width / 2 - LanguageTitle.size[0] / 2, height / 2 - LanguageTitle.size[1] / 2 };
+        int[] options_currlan2 = { width / 2 - LanguageTitle.size[0] / 2, height / 2 - LanguageTitle.size[1] / 2 + 300 };
         int[] options_prevlanBtn = { options_currlan[0] - ChangeButton.SIZE[0] - 20, options_currlan[1] };
         int[] options_nextlanBtn = { options_currlan[0] + LanguageTitle.size[0] + 20, options_currlan[1] };
         // GAME
@@ -397,13 +400,26 @@ public class App {
                 (Renderable) new Backround(appSize), (Renderable) new MenuScreen(appSize), (Renderable) new MenuButton(menu_linkBtn, Textures.LINK_ICON, Interact.LINKS), // LINKS
                 (Renderable) new MenuButton(menu_optionsBtn, Textures.SETTINGS_ICON, Interact.OPTIONS), // OPTIONS
                 // OPTIONS & LINKS PANEL
-                (Renderable) new PopUpPanelWindget(appSize), (Renderable) new LanguageTitle(options_currlan), (Renderable) new ChangeButton(options_prevlanBtn, true), (Renderable) new ChangeButton(options_nextlanBtn, false), (Renderable) new InstagramLink(options_instagramBtn), (Renderable) new GithubLink(options_gitBtn),
+                (Renderable) new PopUpPanelWindget(appSize), //
+                (Renderable) new LanguageTitle(options_currlan), //
+                (Renderable) new DeleteData(options_currlan2), //
+                (Renderable) new ChangeButton(options_prevlanBtn, true), //
+                (Renderable) new ChangeButton(options_nextlanBtn, false), //
+                (Renderable) new InstagramLink(options_instagramBtn), //
+                (Renderable) new GithubLink(options_gitBtn),
                 // GAME MAIN
                 (Renderable) new TimerWidget(game_time), (Renderable) new ScoreWidget(game_score), (Renderable) new TopscoreWidget(game_topscore), (Renderable) new StarWidget(),
                 // PAUSE SCREEN
                 (Renderable) new HomeButton(pause_menuBtn), (Renderable) new PauseScreen(appSize),
                 // GAME OVER SCREEN
                 (Renderable) new ScoreBoard(gameov_scoreboard), (Renderable) new GameOverScreen(appSize)));
+    }
+
+    public void onDeleteData() {
+        this.topScore.set(0);
+        onTopscoreFileSave();
+        onTopscoreFileLoad();
+        this.gpanel.getWidgetsByClass(DeleteData.class).forEach(DeleteData::hide);
     }
 
     // Interactions --------------------------------------------------------------

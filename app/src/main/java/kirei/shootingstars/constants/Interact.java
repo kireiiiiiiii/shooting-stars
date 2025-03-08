@@ -65,4 +65,8 @@ public class Interact {
         App.app.onTargetHit(false);
     };
 
+    public static final Runnable DELETE_DATA = () -> {
+        App.app.onDeleteData();
+    };
+
 }
